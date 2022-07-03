@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Command line test"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1,644">
+    <properties></properties>
+
+
+
+            <testcase
+                name="minusCalculator"
+                time="0,349"
+                classname="Calculator.CalculatorPageTest">
+            </testcase>
+            <testcase
+                name="timesCalculator"
+                time="0,370"
+                classname="Calculator.CalculatorPageTest">
+            </testcase>
+            <testcase
+                name="divideCalculator"
+                time="0,381"
+                classname="Calculator.CalculatorPageTest">
+            </testcase>
+            <testcase
+                name="sumCalculator"
+                time="0,544"
+                classname="Calculator.CalculatorPageTest">
+            </testcase>
+</testsuite>

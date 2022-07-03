@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Command line test"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0,275">
+    <properties></properties>
+
+
+
+            <testcase
+                name="testConfirmBoxNegative"
+                time="0,127"
+                classname="AlertBoxExamples.AlertBoxExamplePageTest">
+            </testcase>
+            <testcase
+                name="testAlertBox"
+                time="0,084"
+                classname="AlertBoxExamples.AlertBoxExamplePageTest">
+            </testcase>
+            <testcase
+                name="testConfirmBoxPositive"
+                time="0,064"
+                classname="AlertBoxExamples.AlertBoxExamplePageTest">
+            </testcase>
+</testsuite>

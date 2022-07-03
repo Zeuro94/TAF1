@@ -14,6 +14,8 @@
                 <methods>
                     <include name="sumCalculator"/>
                     <include name="minusCalculator"/>
+                    <include name="timesCalculator"/>
+                    <include name="divideCalculator"/>
                 </methods>
             </class>
         </classes>

@@ -1,4 +1,5 @@
-MainSelenium.class
+Calculator\CalculatorPage.class
 AlertBoxExamples\AlertBoxExamplePageTest.class
+Calculator\CalculatorPageTest.class
 AlertBoxExamples\AlertBoxExamplePage.class
 BrowserManager\BrowserManager.class
