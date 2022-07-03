@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyFramework" />
+        <module name="Java_Selenium_TestNG_Jenkins" />
       </profile>
     </annotationProcessing>
   </component>

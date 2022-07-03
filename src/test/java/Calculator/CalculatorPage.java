@@ -10,6 +10,7 @@ public class CalculatorPage {
     By inputNumber1 = By.cssSelector( "input#number1" );
     By inputNumber2 = By.cssSelector( "input#number2" );
     By selectFunction = By.cssSelector( "select#function" );
+    By calculate = By.cssSelector( "input#calculate" );
 
 
     public CalculatorPage(WebDriver driver) {
@@ -36,6 +37,10 @@ public class CalculatorPage {
         Select sel = new Select(p);
         sel.selectByVisibleText( "minus" );
 
+    }
+
+    public void calculate (){
+        driver.findElement(calculate).click();
     }
 
 }

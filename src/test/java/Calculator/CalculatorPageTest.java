@@ -21,14 +21,14 @@ public class CalculatorPageTest {
         calculatorPage.setInputNumber1("30");
         calculatorPage.setInputNumber2("30");
         calculatorPage.selectPlus();
-        driver.findElement( By.cssSelector( "input#calculate" ) ).click();
+        calculatorPage.calculate();
         Assert.assertTrue( driver.findElement( By.cssSelector( "span#answer" ) ).getText().contains( "60" ) );
     }
     @Test(priority = 1)
-    public void minusCalculator() throws InterruptedException {
+    public void minusCalculator()  {
 
         calculatorPage.selectMinus();
-        driver.findElement( By.cssSelector( "input#calculate" ) ).click();
+        calculatorPage.calculate();
         Assert.assertTrue( driver.findElement( By.cssSelector( "span#answer" ) ).getText().contains( "0" ) );
 
     }
