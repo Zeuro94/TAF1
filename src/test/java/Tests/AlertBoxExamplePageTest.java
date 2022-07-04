@@ -1,5 +1,6 @@
-package AlertBoxExamples;
+package Tests;
 
+import AlertBoxExamples.AlertBoxExamplePage;
 import BrowserManager.BrowserManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

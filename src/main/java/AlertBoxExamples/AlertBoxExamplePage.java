@@ -10,10 +10,10 @@ import org.openqa.selenium.support.FindBy;
 
 public class AlertBoxExamplePage {
     WebDriver driver;
-    By alertBox = By.cssSelector( "input#alertexamples.styled-click-button" );
-    By confirmBox = By.cssSelector( "input#confirmexample.styled-click-button" );
+    By alertBox = By.id("alertexamples");
+    By confirmBox = By.cssSelector("input#confirmexample.styled-click-button");
 
-    By confirmReturn = By.cssSelector( "p#confirmreturn" );
+    By confirmReturn = By.cssSelector("p#confirmreturn");
 
     public AlertBoxExamplePage(WebDriver driver) {
         this.driver = driver;
@@ -48,12 +48,14 @@ public class AlertBoxExamplePage {
     }
 
     public boolean getConfirmBox(boolean confirmBox) {
-        if (driver.findElement( confirmReturn ).getText().equals( "true" )){
-            return true;}
+        if (driver.findElement( confirmReturn ).getText().equals( "true" )) {
+            return true;
+        }
 
 
-        if (driver.findElement( confirmReturn ).getText().equals( "false" ))
-        { return false;}
+        if (driver.findElement( confirmReturn ).getText().equals( "false" )) {
+            return false;
+        }
 
         return confirmBox;
     }
