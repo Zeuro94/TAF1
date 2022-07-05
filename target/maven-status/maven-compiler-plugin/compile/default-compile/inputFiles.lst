@@ -1,1 +1,7 @@
-C:\Path\MyFramework\src\main\java\org\myframework\Main.java
+C:\Path\MyFramework\src\main\java\pages\LoginPage.java
+C:\Path\MyFramework\src\main\java\implementation\ElementControl.java
+C:\Path\MyFramework\src\main\java\utils\ConfigUtils.java
+C:\Path\MyFramework\src\main\java\implementation\BrowserManager.java
+C:\Path\MyFramework\src\main\java\implementation\CommonDriver.java
+C:\Path\MyFramework\src\main\java\utils\ReportUtils.java
+C:\Path\MyFramework\src\main\java\pages\BasePage.java
