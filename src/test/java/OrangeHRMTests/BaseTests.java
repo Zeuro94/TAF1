@@ -1,14 +1,14 @@
 package OrangeHRMTests;
 
+import com.aventstack.extentreports.Status;
 import implementation.CommonDriver;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.ConfigUtils;
 import utils.ReportUtils;
+import utils.ScreenshotUtils;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -24,6 +24,7 @@ public class BaseTests {
     Properties configProperty;
     String reportFileName;
     ReportUtils reportUtils;
+    ScreenshotUtils screenshot;
 
     @BeforeSuite
     public void preSetup() throws IOException {
@@ -41,12 +42,23 @@ public class BaseTests {
         cmnDriver = new CommonDriver(browserType);
         driver = cmnDriver.getDriver();
         loginPage = new LoginPage(driver);
+        screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
     }
 
     @AfterClass
     public void tearDown() {
         cmnDriver.closeBrowser();
+    }
+    @AfterMethod
+    public void postTestAction(ITestResult result) throws Exception {
+        String testCaseName = result.getName();
+        long executionTime = System.currentTimeMillis();
+        String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + executionTime + ".jpeg";
+        if(result.getStatus() == ITestResult.FAILURE){
+            reportUtils.addTestLog(Status.FAIL, "One or more steps failed");
+            screenshot.saveScreenshot(screenshotFilename);
+        }
     }
     @AfterSuite
     public void clearReport(){
