@@ -1,8 +1,0 @@
-.gitignore
-test-output/
-textXmlFiles/testng.xml
-screenshots/
-reports/
-textXmlFiles/
-.idea/
-
