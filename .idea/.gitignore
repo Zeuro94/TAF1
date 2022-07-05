@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+.gitignore
+test-output/
+textXmlFiles/testng.xml
+screenshots/
+reports/
+textXmlFiles/
