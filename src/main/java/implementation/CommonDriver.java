@@ -3,7 +3,7 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class CommonDriver {
-    private WebDriver driver;
+    private final WebDriver driver;
     private int pageLoadTimer;
     private int elementDetectionTimeout;
 
