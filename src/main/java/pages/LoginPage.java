@@ -15,6 +15,9 @@ public class LoginPage extends BasePage {
     @FindBy(id = "btnLogin")
     private WebElement btnLogin;
 
+    @FindBy(id = "spanMessage")
+    private WebElement invalidCredentials;
+
     public LoginPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
@@ -25,4 +28,5 @@ public class LoginPage extends BasePage {
         elementControl.setText(userPassword, password);
         elementControl.clickElement(btnLogin);
     }
+
 }

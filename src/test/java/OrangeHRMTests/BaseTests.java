@@ -35,7 +35,7 @@ public class BaseTests {
         reportUtils = new ReportUtils(reportFileName);
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp() throws Exception {
         url = configProperty.getProperty("baseUrl");
         String browserType = configProperty.getProperty("browserType");
@@ -46,19 +46,19 @@ public class BaseTests {
         cmnDriver.navigateTo(url);
     }
 
-    @AfterClass
-    public void tearDown() {
-        cmnDriver.closeBrowser();
-    }
     @AfterMethod
     public void postTestAction(ITestResult result) throws Exception {
         String testCaseName = result.getName();
-        long executionTime = System.currentTimeMillis();
-        String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + executionTime + ".jpeg";
+        String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + ".jpeg";
         if(result.getStatus() == ITestResult.FAILURE){
             reportUtils.addTestLog(Status.FAIL, "One or more steps failed");
             screenshot.saveScreenshot(screenshotFilename);
         }
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        cmnDriver.closeBrowser();
     }
     @AfterSuite
     public void clearReport(){

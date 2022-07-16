@@ -41,4 +41,8 @@ public class ElementControl {
     public String getTextFromAlert() {
         return driver.switchTo().alert().getText();
     }
+
+    public String getTextFromElement(WebElement element){
+        return element.getText();
+    }
 }
