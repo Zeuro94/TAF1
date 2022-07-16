@@ -13,7 +13,7 @@ public class LoginTests extends BaseTests {
         reportUtils.createTestCare("Verify Login With Correct Credentials");
         reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login( username, password );
-        String expectedTitle = "aaOrangeHRM";
+        String expectedTitle = "OrangeHRM";
         String actualTitle = cmnDriver.getTitleOfThePage();
         reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
         Assert.assertEquals( actualTitle, expectedTitle );
