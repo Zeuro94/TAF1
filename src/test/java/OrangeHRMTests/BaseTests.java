@@ -2,6 +2,7 @@ package OrangeHRMTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.CommonDriver;
+import implementation.ElementControl;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -25,6 +26,7 @@ public class BaseTests {
     String reportFileName;
     ReportUtils reportUtils;
     ScreenshotUtils screenshot;
+    ElementControl elementControl;
 
     @BeforeSuite
     public void preSetup() throws IOException {
@@ -37,6 +39,7 @@ public class BaseTests {
 
     @BeforeMethod
     public void setUp() throws Exception {
+        elementControl = new ElementControl(driver);
         url = configProperty.getProperty("baseUrl");
         String browserType = configProperty.getProperty("browserType");
         cmnDriver = new CommonDriver(browserType);
@@ -51,7 +54,7 @@ public class BaseTests {
         String testCaseName = result.getName();
         String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + ".jpeg";
         if(result.getStatus() == ITestResult.FAILURE){
-            reportUtils.addTestLog(Status.FAIL, "One or more steps failed");
+            reportUtils.addTestLog(Status.FAIL, "Step failed");
             screenshot.saveScreenshot(screenshotFilename);
         }
     }
