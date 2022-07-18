@@ -19,8 +19,9 @@ public class ReportUtils {
         extentReports.attachReporter(htmlReporter);
     }
 
-    public void createTestCare(String testCaseName){
+    public String createTestCare(String testCaseName){
         extentTest = extentReports.createTest(testCaseName);
+        return testCaseName;
     }
 
     public void addTestLog(Status status, String comment){

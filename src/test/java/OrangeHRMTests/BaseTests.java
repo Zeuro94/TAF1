@@ -5,7 +5,10 @@ import implementation.CommonDriver;
 import implementation.ElementControl;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import pages.LoginPage;
 import utils.ConfigUtils;
 import utils.ReportUtils;
@@ -28,6 +31,7 @@ public class BaseTests {
     ScreenshotUtils screenshot;
     ElementControl elementControl;
 
+
     @BeforeSuite
     public void preSetup() throws IOException {
         currentWorkingDirectory = System.getProperty("user.dir");
@@ -47,7 +51,7 @@ public class BaseTests {
         loginPage = new LoginPage(driver);
         screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
-    }
+     }
 
     @AfterMethod
     public void postTestAction(ITestResult result) throws Exception {
@@ -56,6 +60,8 @@ public class BaseTests {
         if(result.getStatus() == ITestResult.FAILURE){
             reportUtils.addTestLog(Status.FAIL, "Step failed");
             screenshot.saveScreenshot(screenshotFilename);
+        } else if (result.getStatus() == ITestResult.SUCCESS) {
+            reportUtils.addTestLog(Status.PASS, "Test passed");
         }
     }
 
