@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/TAF1">
+        <parameter name="usernameValid" value="admin"/>
+        <parameter name="usernameInvalid" value="aadmin"/>
+        <parameter name="passwordValid" value="admin123"/>
+        <parameter name="passwordInvalid" value="admin1234"/>
+        <classes>
+            <class name="OrangeHRMTests.LoginTests">
+                <methods>
+                    <include name="verifyLoginWithCorrectCredentials"/>
+                    <include name="verifyLoginWithWrongUsername"/>
+                    <include name="verifyLoginWithWrongPassword"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

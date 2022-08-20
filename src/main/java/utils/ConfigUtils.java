@@ -12,6 +12,5 @@ public class ConfigUtils {
         Properties properties = new Properties();
         properties.load(fileReader);
         return properties;
-
     }
 }
