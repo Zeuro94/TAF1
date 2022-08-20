@@ -1,3 +1,4 @@
+pages\AlertPage.class
 utils\ReportUtils.class
 implementation\CommonDriver.class
 pages\BasePage.class
