@@ -9,7 +9,7 @@ public class LoginTest extends BaseFor {
 
     //@Parameters({"usernameValid", "passwordValid"})
     @Test
-    public void verifyLoginWithCorrectCredentials(String username, String password) {
+    public void verifyLoginWithCorrectCredentials() {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
         reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(configProperty.getProperty("usernameValid"), configProperty.getProperty("passwordValid"));
@@ -22,7 +22,7 @@ public class LoginTest extends BaseFor {
 
     //@Parameters({"usernameInvalid", "passwordValid"})
     @Test
-    public void verifyLoginWithWrongUsername(String username, String password) {
+    public void verifyLoginWithWrongUsername() {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
         reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(configProperty.getProperty("usernameValid"), "passwordInvalid");
@@ -32,7 +32,7 @@ public class LoginTest extends BaseFor {
 
     //@Parameters({"usernameValid", "passwordInvalid"})
     @Test
-    public void verifyLoginWithWrongPassword(String username, String password) {
+    public void verifyLoginWithWrongPassword() {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
         reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(configProperty.getProperty("usernameInvalid"), "passwordValid");
