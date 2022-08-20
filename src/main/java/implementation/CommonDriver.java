@@ -4,16 +4,12 @@ import java.time.Duration;
 
 public class CommonDriver {
     private final WebDriver driver;
-    private int pageLoadTimer;
-    private int elementDetectionTimeout;
 
     public long setPageLoadTimer(int pageLoadTimer) {
-        this.pageLoadTimer = pageLoadTimer;
         return pageLoadTimer;
     }
 
     public long setElementDetectionTimeout(int elementDetectionTimeout) {
-        this.elementDetectionTimeout = elementDetectionTimeout;
         return elementDetectionTimeout;
     }
 
@@ -48,7 +44,4 @@ public class CommonDriver {
         driver.quit();
     }
 
-    public String getTitleOfThePage(){
-        return driver.getTitle();
-    }
 }

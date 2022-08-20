@@ -1,6 +1,5 @@
 package OrangeHRMTests;
 
-import com.aventstack.extentreports.Status;
 import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,12 +10,12 @@ public class LoginTests extends BaseTests {
     @Test
     public void verifyLoginWithCorrectCredentials(String username, String password) {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
-        reportUtils.addTestLog(Status.INFO, "Performing log");
+        //reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(username, password);
-        reportUtils.addTestLog(Status.INFO, "User is logged");
+        //reportUtils.addTestLog(Status.INFO, "User is logged");
         String expectedTitle = "OrangeHRM";
-        String actualTitle = cmnDriver.getTitleOfThePage();
-        reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
+        String actualTitle = loginPage.getTitle();
+        //reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
@@ -24,9 +23,9 @@ public class LoginTests extends BaseTests {
     @Test
     public void verifyLoginWithWrongUsername(String username, String password) {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
-        reportUtils.addTestLog(Status.INFO, "Performing log");
+        //reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(username, password);
-        reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
+        //reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
         Assert.assertTrue(elementControl.isDisplayed(loginPage.invalidCredentials));
     }
 
@@ -34,9 +33,9 @@ public class LoginTests extends BaseTests {
     @Test
     public void verifyLoginWithWrongPassword(String username, String password) {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
-        reportUtils.addTestLog(Status.INFO, "Performing log");
+       // reportUtils.addTestLog(Status.INFO, "Performing log");
         loginPage.login(username, password);
-        reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
+       // reportUtils.addTestLog(Status.INFO, "Comparing expected and actual title");
         Assert.assertTrue(elementControl.isDisplayed(loginPage.invalidCredentials));
     }
 }

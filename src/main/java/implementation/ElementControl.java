@@ -11,7 +11,7 @@ public class ElementControl {
     }
 
     public void clickElement(WebElement element) {
-        element.click();
+       element.click();
     }
 
     public void clear(WebElement element) {
@@ -44,5 +44,9 @@ public class ElementControl {
 
     public String getTextFromElement(WebElement element){
         return element.getText();
+    }
+
+    public String getTitleOfThePage(){
+        return driver.getTitle();
     }
 }

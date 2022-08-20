@@ -4,4 +4,5 @@ pages\BasePage.class
 pages\LoginPage.class
 implementation\BrowserManager.class
 utils\ConfigUtils.class
+utils\ScreenshotUtils.class
 implementation\ElementControl.class

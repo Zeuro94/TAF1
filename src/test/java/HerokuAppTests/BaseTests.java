@@ -1,4 +1,4 @@
-package OrangeHRMTests;
+package HerokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.CommonDriver;
@@ -36,7 +36,7 @@ public class BaseTests {
     public void preSetup() throws IOException {
         currentWorkingDirectory = System.getProperty("user.dir");
         configFileName = currentWorkingDirectory + "/config/config.properties";
-        reportFileName = currentWorkingDirectory + "/reports/OrangeHRMTestReport.html";
+        reportFileName = currentWorkingDirectory + "/reports/HerokuApp.html";
         configProperty = ConfigUtils.readProperties(configFileName);
         reportUtils = new ReportUtils(reportFileName);
     }
@@ -44,7 +44,7 @@ public class BaseTests {
     @BeforeMethod
     public void setUp() throws Exception {
         elementControl = new ElementControl(driver);
-        url = configProperty.getProperty("urlOrangeHRM");
+        url = configProperty.getProperty("urlHerokuApp");
         String browserType = configProperty.getProperty("browserType");
         cmnDriver = new CommonDriver(browserType);
         driver = cmnDriver.getDriver();
@@ -58,7 +58,7 @@ public class BaseTests {
         String testCaseName = result.getName();
         String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + ".jpeg";
         if(result.getStatus() == ITestResult.FAILURE){
-            reportUtils.addTestLog(Status.FAIL,"Step failed");
+            reportUtils.addTestLog(Status.FAIL, "Step failed");
             screenshot.saveScreenshot(screenshotFilename);
         } else if (result.getStatus() == ITestResult.SUCCESS) {
             reportUtils.addTestLog(Status.PASS, "Test passed");

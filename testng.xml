@@ -7,6 +7,11 @@
         <parameter name="passwordValid" value="admin123"/>
         <parameter name="passwordInvalid" value="admin1234"/>
         <classes>
+            <class name="HerokuAppTests.AlertBoxTest">
+                <methods>
+                    <include name="verifyAlert"/>
+                </methods>
+            </class>
             <class name="OrangeHRMTests.LoginTests">
                 <methods>
                     <include name="verifyLoginWithCorrectCredentials"/>
