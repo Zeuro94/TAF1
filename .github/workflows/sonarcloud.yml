@@ -32,7 +32,7 @@ on:
   push:
     branches: [ "master" ]
   pull_request:
-    branches: [ "Zeuro94-patch-1" ]
+    branches: [ "master2" ]
   workflow_dispatch:
 
 permissions:
