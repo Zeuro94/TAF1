@@ -1,12 +1,12 @@
 package utils;
 
-import org.apache.commons.io.FileExistsException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import java.io.File;
+import java.io.IOException;
 
 
 public class ScreenshotUtils {
@@ -16,7 +16,7 @@ public class ScreenshotUtils {
         camera =(TakesScreenshot) driver;
     }
 
-    public void saveScreenshot(String filename) throws Throwable {
+    public void saveScreenshot(String filename) {
 
 
 
@@ -30,9 +30,8 @@ public class ScreenshotUtils {
         try {
             FileUtils.moveFile(tmpFile, imgFile);
         }
-        catch (FileExistsException existsException){
+        catch (IOException existsException){
             existsException.getStackTrace();
         }
     }
-
 }
