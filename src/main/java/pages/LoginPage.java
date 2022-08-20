@@ -38,7 +38,6 @@ public class LoginPage extends BasePage {
         hashMap.put("userId", driver.findElement(By.cssSelector("input[placeholder='Username']")));
         hashMap.put("userPassword", driver.findElement(By.cssSelector("input[placeholder='Password']")));
         hashMap.put("btnLogin", driver.findElement(By.cssSelector("button[type='submit']")));
-       // hashMap.put("invalidCredentials", driver.findElement(By.cssSelector(".oxd-text.oxd-text--p.oxd-alert-content-text")));
 
         return hashMap;
     }
