@@ -30,7 +30,7 @@ public class ScreenshotUtils {
             FileUtils.moveFile(tmpFile, imgFile);
         }
         catch (FileExistsException existsException){
-            existsException.printStackTrace();
+            System.out.prinln(existsException);
         }
     }
 
