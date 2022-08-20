@@ -7,11 +7,11 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class ReportUtils {
 
-    ExtentHtmlReporter htmlReporter;
-    ExtentReports extentReports;
+    final ExtentHtmlReporter htmlReporter;
+    final ExtentReports extentReports;
     ExtentTest extentTest;
 
-    public ReportUtils(String htmlReportFilename){
+    public ReportUtils(String htmlReportFilename) {
         htmlReportFilename = htmlReportFilename.trim();
 
         htmlReporter = new ExtentHtmlReporter(htmlReportFilename);
@@ -19,16 +19,15 @@ public class ReportUtils {
         extentReports.attachReporter(htmlReporter);
     }
 
-    public String createTestCare(String testCaseName){
+    public void createTestCare(String testCaseName) {
         extentTest = extentReports.createTest(testCaseName);
-        return testCaseName;
     }
 
-    public void addTestLog(Status status, String comment){
+    public void addTestLog(Status status, String comment) {
         extentTest.log(status, comment);
     }
 
-    public void flushReport(){
+    public void flushReport() {
         extentReports.flush();
     }
 }

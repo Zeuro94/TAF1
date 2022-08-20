@@ -10,7 +10,7 @@ import java.io.IOException;
 
 
 public class ScreenshotUtils {
-    private TakesScreenshot camera;
+    private final TakesScreenshot camera;
 
     public ScreenshotUtils(WebDriver driver){
         camera =(TakesScreenshot) driver;

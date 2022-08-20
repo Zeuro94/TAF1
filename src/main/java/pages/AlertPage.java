@@ -19,7 +19,7 @@ public class AlertPage extends BasePage {
     private WebElement showConfirmBox;
 
     @FindBy(id = "promptexample")
-    private WebElement showPromtBox;
+    private WebElement showPromptBox;
 
     public void clickOnAlertBox(){
         elementControl.clickElement(showAlertBox);

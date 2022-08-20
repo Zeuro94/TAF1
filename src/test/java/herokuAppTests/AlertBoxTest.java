@@ -1,4 +1,4 @@
-package HerokuAppTests;
+package herokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.ElementControl;
@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertPage;
 
-public class AlertBoxTest extends BaseTest {
+public class AlertBoxTest extends Base {
     AlertPage alertPage;
     ElementControl elementControl;
 

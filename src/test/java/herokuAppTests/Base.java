@@ -1,4 +1,4 @@
-package HerokuAppTests;
+package herokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.CommonDriver;
@@ -17,7 +17,7 @@ import utils.ScreenshotUtils;
 import java.io.IOException;
 import java.util.Properties;
 
-public class BaseTest {
+public class Base {
 
     CommonDriver cmnDriver;
     String url;

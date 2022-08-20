@@ -1,4 +1,4 @@
-package OrangeHRMTests;
+package orangeHRMTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.CommonDriver;
@@ -17,11 +17,11 @@ import utils.ScreenshotUtils;
 import java.io.IOException;
 import java.util.Properties;
 
-public class BaseTests {
+public class BaseFor {
 
     CommonDriver cmnDriver;
     String url;
-    WebDriver driver;
+    static WebDriver driver;
     LoginPage loginPage;
     String configFileName;
     String currentWorkingDirectory;
@@ -48,13 +48,13 @@ public class BaseTests {
         String browserType = configProperty.getProperty("browserType");
         cmnDriver = new CommonDriver(browserType);
         driver = cmnDriver.getDriver();
-        loginPage = new LoginPage(driver);
         screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
+        loginPage = new LoginPage(driver);
      }
 
     @AfterMethod
-    public void postTestAction(ITestResult result) throws Throwable {
+    public void postTestAction(ITestResult result) {
         String testCaseName = result.getName();
         String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + ".jpeg";
         if(result.getStatus() == ITestResult.FAILURE){

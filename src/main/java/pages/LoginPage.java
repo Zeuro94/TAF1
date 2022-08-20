@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class LoginPage extends BasePage {
     @FindBy(css = "input[placeholder='Username']")
@@ -27,12 +28,12 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String username, String password) {
-        elementControl.setText((WebElement)loginPageElements().get("userId"), username);
-        elementControl.setText((WebElement)loginPageElements().get("userPassword"), password);
-        elementControl.clickElement((WebElement)loginPageElements().get("btnLogin"));
+        elementControl.setText(loginPageElements().get("userId"), username);
+        elementControl.setText(loginPageElements().get("userPassword"), password);
+        elementControl.clickElement(loginPageElements().get("btnLogin"));
     }
 
-    public HashMap loginPageElements() {
+    public Map<String, WebElement> loginPageElements() {
         HashMap<String, WebElement> hashMap = new HashMap<>();
         hashMap.put("userId", driver.findElement(By.cssSelector("input[placeholder='Username']")));
         hashMap.put("userPassword", driver.findElement(By.cssSelector("input[placeholder='Password']")));
