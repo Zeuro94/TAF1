@@ -54,7 +54,7 @@ public class BaseTests {
      }
 
     @AfterMethod
-    public void postTestAction(ITestResult result) throws Exception {
+    public void postTestAction(ITestResult result) throws Throwable {
         String testCaseName = result.getName();
         String screenshotFilename = currentWorkingDirectory + "/screenshots/" + testCaseName + ".jpeg";
         if(result.getStatus() == ITestResult.FAILURE){

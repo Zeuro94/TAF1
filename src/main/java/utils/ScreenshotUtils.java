@@ -16,12 +16,13 @@ public class ScreenshotUtils {
         camera =(TakesScreenshot) driver;
     }
 
-    public void saveScreenshot(String filename) throws Exception {
+    public void saveScreenshot(String filename) throws Throwable {
 
 
 
         filename = filename.trim();
-        File imgFile, tmpFile;
+        File imgFile;
+        File tmpFile;
 
         imgFile = new File(filename);
 

@@ -1,5 +1,7 @@
 package implementation;
 import org.openqa.selenium.WebDriver;
+
+import javax.naming.NameNotFoundException;
 import java.time.Duration;
 
 public class CommonDriver {
@@ -17,7 +19,7 @@ public class CommonDriver {
         return driver;
     }
 
-    public CommonDriver(String browserType) throws Exception {
+    public CommonDriver(String browserType) throws NameNotFoundException {
 
         if (browserType.equalsIgnoreCase("chrome")){
             driver = BrowserManager.getChromeDriver();
@@ -26,7 +28,7 @@ public class CommonDriver {
         } else if (browserType.equalsIgnoreCase("edge")){
             driver = BrowserManager.getEdgeDriver();
         } else {
-            throw new Exception("Invalid browser type" + browserType);
+            throw new NameNotFoundException("Invalid browser type" + browserType);
         }
 
         driver.manage().window().maximize();

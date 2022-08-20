@@ -6,6 +6,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserManager {
+
+    private BrowserManager(){
+
+    }
     public static ChromeDriver getChromeDriver(){
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();

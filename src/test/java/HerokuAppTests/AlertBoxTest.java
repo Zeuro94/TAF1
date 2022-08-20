@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertPage;
 
-public class AlertBoxTest extends BaseTests {
+public class AlertBoxTest extends BaseTest {
     AlertPage alertPage;
     ElementControl elementControl;
 
