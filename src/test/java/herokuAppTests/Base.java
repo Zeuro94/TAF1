@@ -14,6 +14,7 @@ import utils.ConfigUtils;
 import utils.ReportUtils;
 import utils.ScreenshotUtils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
@@ -31,7 +32,7 @@ public class Base {
     ReportUtils reportUtils;
     ScreenshotUtils screenshot;
     ElementControl elementControl;
-    Logger logger;
+    File dir;
 
 
     @BeforeSuite
@@ -41,6 +42,7 @@ public class Base {
         reportFileName = currentWorkingDirectory + "/reports/HerokuApp.html";
         configProperty = ConfigUtils.readProperties(configFileName);
         reportUtils = new ReportUtils(reportFileName);
+        deletePreviousScreenshots(currentWorkingDirectory + "/screenshots/");
     }
 
     @BeforeMethod
@@ -64,6 +66,7 @@ public class Base {
             screenshot.saveScreenshot(screenshotFilename);
         } else if (result.getStatus() == ITestResult.SUCCESS) {
             reportUtils.addTestLog(Status.PASS, "Test passed");
+            screenshot.saveScreenshot(screenshotFilename);
         }
     }
 
@@ -74,6 +77,13 @@ public class Base {
     @AfterSuite
     public void clearReport(){
         reportUtils.flushReport();
+    }
+
+    private void deletePreviousScreenshots(String folder){
+        dir = new File(folder);
+        for (File file: dir.listFiles())
+            if (!file.isDirectory())
+                file.delete();
     }
 }
 
