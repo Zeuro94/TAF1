@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AlertPage extends BasePage {
+
     public AlertPage(WebDriver driver) {
         super( driver );
         PageFactory.initElements(driver, this);

@@ -28,7 +28,8 @@ public class LoginPage extends BasePage {
     }
 
     public void login(String username, String password) {
-        elementControl.setText(loginPageElements().get("userId"), username);
+        userId.sendKeys(username);
+        //elementControl.setText(loginPageElements().get("userId"), username);
         elementControl.setText(loginPageElements().get("userPassword"), password);
         elementControl.clickElement(loginPageElements().get("btnLogin"));
     }

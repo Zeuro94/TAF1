@@ -21,7 +21,7 @@ public class BaseFor {
 
     CommonDriver cmnDriver;
     String url;
-    static WebDriver driver;
+    WebDriver driver;
     LoginPage loginPage;
     String configFileName;
     String currentWorkingDirectory;
