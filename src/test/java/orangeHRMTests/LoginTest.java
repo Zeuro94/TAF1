@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseFor {
+public class LoginTest extends Base {
 
     @Parameters({"usernameValid", "passwordValid"})
     @Test
