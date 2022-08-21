@@ -2,25 +2,27 @@ package herokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.ElementControl;
+import org.apache.commons.logging.impl.SLF4JLog;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertPage;
 
+import java.util.logging.Logger;
+
 public class AlertBoxTest extends Base {
     AlertPage alertPage;
     ElementControl elementControl;
+    Logger logger;
 
     @Test
     public void verifyAlert(){
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
         reportUtils.addTestLog(Status.INFO,"Performing log");
-        alertPage = new AlertPage(driver);
+        alertPage = new AlertPage(driver, logger);
         elementControl = new ElementControl( driver );
         Assert.assertFalse(alertPage.isAlertPresent());
         alertPage.clickOnAlertBox();
-        alertPage.isAlertPresent();
         Assert.assertTrue(alertPage.isAlertPresent());
         elementControl.okAlert();
-
     }
 }

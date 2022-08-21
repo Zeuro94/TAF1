@@ -8,8 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class LoginPage extends BasePage {
+
     @FindBy(css = "input[placeholder='Username']")
     private WebElement userId;
 
@@ -22,13 +24,14 @@ public class LoginPage extends BasePage {
     @FindBy(css = ".oxd-text.oxd-text--p.oxd-alert-content-text")
     public WebElement invalidCredentials;
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage(WebDriver driver, Logger logger) {
+        super(driver,logger);
         PageFactory.initElements(driver, this);
     }
 
     public void login(String username, String password) {
         elementControl.setText(loginPageElements().get("userId"), username);
+        logger.info("Alert is present");
         elementControl.setText(loginPageElements().get("userPassword"), password);
         elementControl.clickElement(loginPageElements().get("btnLogin"));
     }

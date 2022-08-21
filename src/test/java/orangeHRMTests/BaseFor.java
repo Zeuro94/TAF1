@@ -16,6 +16,7 @@ import utils.ScreenshotUtils;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class BaseFor {
 
@@ -30,6 +31,7 @@ public class BaseFor {
     ReportUtils reportUtils;
     ScreenshotUtils screenshot;
     ElementControl elementControl;
+    Logger logger;
 
 
     @BeforeSuite
@@ -50,7 +52,7 @@ public class BaseFor {
         driver = cmnDriver.getDriver();
         screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(driver, logger);
      }
 
     @AfterMethod
