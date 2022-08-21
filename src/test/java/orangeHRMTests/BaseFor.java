@@ -52,7 +52,7 @@ public class BaseFor {
         driver = cmnDriver.getDriver();
         screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
-        loginPage = new LoginPage(driver, logger);
+        loginPage = new LoginPage(driver);
      }
 
     @AfterMethod

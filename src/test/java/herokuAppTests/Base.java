@@ -50,7 +50,7 @@ public class Base {
         String browserType = configProperty.getProperty("browserType");
         cmnDriver = new CommonDriver(browserType);
         driver = cmnDriver.getDriver();
-        loginPage = new LoginPage(driver, logger);
+        loginPage = new LoginPage(driver);
         screenshot = new ScreenshotUtils(driver);
         cmnDriver.navigateTo(url);
      }
