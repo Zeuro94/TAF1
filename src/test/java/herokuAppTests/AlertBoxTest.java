@@ -19,7 +19,7 @@ public class AlertBoxTest extends Base {
         reportUtils.createTestCare(new Throwable().getStackTrace()[0].getMethodName());
         reportUtils.addTestLog(Status.INFO,"Performing log");
         alertPage = new AlertPage(driver);
-        elementControl = new ElementControl( driver );
+        elementControl = new ElementControl(driver);
         Assert.assertFalse(alertPage.isAlertPresent());
         alertPage.clickOnAlertBox();
         Assert.assertTrue(alertPage.isAlertPresent());

@@ -18,8 +18,6 @@ public class ScreenshotUtils {
 
     public void saveScreenshot(String filename) {
 
-
-
         filename = filename.trim();
         File imgFile;
         File tmpFile;

@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class BaseFor {
+public class Base {
 
     CommonDriver cmnDriver;
     String url;

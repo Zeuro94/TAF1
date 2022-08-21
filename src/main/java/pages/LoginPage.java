@@ -30,7 +30,7 @@ public class LoginPage extends BasePage {
 
     public void login(String username, String password) {
         elementControl.setText(loginPageElements().get("userId"), username);
-        logger.info("Alert is present");
+        logger.info("Username entered");
         elementControl.setText(loginPageElements().get("userPassword"), password);
         elementControl.clickElement(loginPageElements().get("btnLogin"));
     }
