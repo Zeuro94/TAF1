@@ -2,13 +2,17 @@ package herokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.ElementControl;
+import org.apache.commons.logging.impl.SLF4JLog;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertPage;
 
+import java.util.logging.Logger;
+
 public class AlertBoxTest extends Base {
     AlertPage alertPage;
     ElementControl elementControl;
+    Logger logger;
 
     @Test
     public void verifyAlert(){
@@ -18,9 +22,7 @@ public class AlertBoxTest extends Base {
         elementControl = new ElementControl( driver );
         Assert.assertFalse(alertPage.isAlertPresent());
         alertPage.clickOnAlertBox();
-        alertPage.isAlertPresent();
         Assert.assertTrue(alertPage.isAlertPresent());
         elementControl.okAlert();
-
     }
 }

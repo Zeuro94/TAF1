@@ -42,8 +42,6 @@ public class CommonDriver {
     }
 
     public void closeBrowser(){
-        driver.close();
         driver.quit();
     }
-
 }

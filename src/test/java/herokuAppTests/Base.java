@@ -16,6 +16,7 @@ import utils.ScreenshotUtils;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class Base {
 
@@ -30,6 +31,7 @@ public class Base {
     ReportUtils reportUtils;
     ScreenshotUtils screenshot;
     ElementControl elementControl;
+    Logger logger;
 
 
     @BeforeSuite

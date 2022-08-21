@@ -6,10 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class AlertPage extends BasePage {
 
     public AlertPage(WebDriver driver) {
-        super( driver );
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -24,14 +25,17 @@ public class AlertPage extends BasePage {
 
     public void clickOnAlertBox(){
         elementControl.clickElement(showAlertBox);
+        logger.info("Clicked on: showAlertBox");
     }
 
     public boolean isAlertPresent(){
         try {
             driver.switchTo().alert();
+            logger.info("Alert is present");
             return true;
         }
         catch (NoAlertPresentException e){
+            logger.info("Alert is not present");
             return false;
         }
     }
