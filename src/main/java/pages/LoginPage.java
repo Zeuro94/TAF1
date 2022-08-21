@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 public class LoginPage extends BasePage {
 
@@ -24,8 +23,8 @@ public class LoginPage extends BasePage {
     @FindBy(css = ".oxd-text.oxd-text--p.oxd-alert-content-text")
     public WebElement invalidCredentials;
 
-    public LoginPage(WebDriver driver, Logger logger) {
-        super(driver,logger);
+    public LoginPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 

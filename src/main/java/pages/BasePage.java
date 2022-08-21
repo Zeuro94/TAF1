@@ -9,7 +9,7 @@ public class BasePage {
     final WebDriver driver;
     final ElementControl elementControl;
     final Logger logger;
-    public BasePage(WebDriver driver, Logger logger) {
+    public BasePage(WebDriver driver) {
         this.driver = driver;
         elementControl = new ElementControl(driver);
         this.logger= Logger.getLogger(this.getClass().getName());
