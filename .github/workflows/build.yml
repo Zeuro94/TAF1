@@ -33,4 +33,4 @@ jobs:
         env:
           GITHUB_TOKEN: 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  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Zeuro94_TAF1
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Zeuro94_TAF1 -Dmaven.test.skip=true
