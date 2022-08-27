@@ -2,7 +2,6 @@ package herokuAppTests;
 
 import com.aventstack.extentreports.Status;
 import implementation.ElementControl;
-import org.apache.commons.logging.impl.SLF4JLog;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AlertPage;
