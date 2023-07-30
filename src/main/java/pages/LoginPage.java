@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,7 +18,7 @@ public class LoginPage extends BasePage {
     private WebElement userPassword;
 
     @FindBy(css = "button[type='submit']")
-    private WebElement btnLogin;
+    public WebElement btnLogin;
 
     @FindBy(css = ".oxd-text.oxd-text--p.oxd-alert-content-text")
     public WebElement invalidCredentials;
@@ -26,6 +27,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Test runner use the following credentials {0} {1}")
     public void login(String username, String password) {
         elementControl.setText(loginPageElements().get("userId"), username);
         logger.info("Username entered");
@@ -33,6 +35,7 @@ public class LoginPage extends BasePage {
         elementControl.clickElement(loginPageElements().get("btnLogin"));
     }
 
+    @Step
     public Map<String, WebElement> loginPageElements() {
         HashMap<String, WebElement> hashMap = new HashMap<>();
         hashMap.put("userId", driver.findElement(By.cssSelector("input[placeholder='Username']")));
@@ -43,6 +46,7 @@ public class LoginPage extends BasePage {
 
     }
 
+    @Step("Get title")
     public String getTitle(){
         return elementControl.getTitleOfThePage();
     }
