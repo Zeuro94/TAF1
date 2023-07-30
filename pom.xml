@@ -14,19 +14,21 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <sonar.organization>zeuro94</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <aspectj.version>1.9.7</aspectj.version>
+        <maven-surefire-plugin-version>3.0.0-M5</maven-surefire-plugin-version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.3.0</version>
+            <version>4.10.0</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.2.2</version>
+            <version>5.4.1</version>
         </dependency>
 
         <dependency>
@@ -53,6 +55,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.36</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.23.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.2.0</version>
         </dependency>
 
     </dependencies>
